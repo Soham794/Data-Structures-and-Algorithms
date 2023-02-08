@@ -1,0 +1,80 @@
+What is a linked list?
+
+A linked list is a linear data structure.
+In this, we store the data in nodes which essentially contains two fields
+1. data - to store the data
+2. next pointer - which is a pointer to the next node
+Unlike arrays, linked list elements are not stored at a contiguous location.
+The elements are linked using pointers, so these form a linear series of connected nodes,
+and we store the starting node of the linked list named as 'head' to perform various operation
+on linked list. 
+
+Why linked lists ?
+
+Arrays also store the data in a linear form, however arrays have certain limitations:
+-size of array is fixed and can be a tedious work to resize an array.
+-insertion and deletion is costly since we have to maintain a contiguous order.
+
+The linked list provides solution to these problems as, 
+- linked list is dynamic and size of the linked list can be increased or decreased efficiently.
+- it is easy to insert and delete element as it is not contiguous.
+
+Drawbacks/Disadvantages of linked list ?
+
+-Random access to any element is not possible since elements are not in a contiguous block of
+memory rather they are scattered and a pointer is maintained to access them.
+(arrays provide random access to any element)
+
+-extra memory space for the pointer to next node.
+
+-reverse traversing is not possible.
+
+-confusing while working with pointers.
+
+-sorting is very complex and costly.
+
+-searching always takes O(n).
+
+
+Why is a linked list preferred over an array?
+
+-Nodes in a linked array, insertions, and deletions can be done at any
+point in the list at a constant time.
+-Arrays are of fixed size and their size is static but Linked lists are 
+dynamic and flexible and can expand and shrink their size.
+-Linked lists provide an efficient way of storing related data and 
+performing basic operations such as insertion, deletion, and updating 
+of information at the cost of extra space required for storing the address.
+-Insertion and deletion operations in the linked list are faster as compared to the array. 
+
+Types of linked list and operations that can be performed?
+Types:
+-simple linked list
+-doubly linked list
+-circular linked list
+-doubly circular linked list
+
+Operations:
+-insertion
+-deletion
+-search
+
+
+Time complexity (T.C.) of linked list operations ?
+
+Operation	worst case T.C.	  average case T.C. :
+searching  - 	   O(n)			O(n)
+inserting  - 	   O(1)			O(1)
+deleting   - 	   O(1)			O(1)
+
+
+Auxilary Space : O(N)
+
+
+
+Applications of linked list:
+
+-used in implementation of stacks and queues.
+-used in various representation of trees and graphs.
+-finding path in networks
+-used in algorithms which require frequent insertion and deletion.
