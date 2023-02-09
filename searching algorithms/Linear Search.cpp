@@ -14,19 +14,19 @@ typedef unsigned long long ull;
 typedef long double lld;
 
 // function to print the array
-void printArray(int arr[], int n){
-	for(int i=0;i<n;i++){
-		cout << arr[i] << space;
+void printArray(vector<int> &arr, int n){
+	for(int i: arr){
+		cout << i << space;
 	}
 	cout << nline;
 }
 
 // Function implementing linear search
-int LinearSearch(int arr[], int num){
-	int length = sizeof(arr)/sizeof(arr[0]); // get the length of array to traverse
-	int index = 0; // setting the starting index to 0
-	for(index = 0;index < length;index++){
-		if(arr[index] == num){ // if the element at that index matches with the requirement
+int LinearSearch(vector<int> &arr, int num){
+	int length = arr.size(); // get the length of array to traverse
+	int index = 0; // setting the starting index to 0 (as array indexing starts from 0)
+	for(index = 0;index < length;index++){ // loop over the array and compare each element to target element
+		if(arr[index] == num){ // if the element at that index matches with the target element
 			return index;  	   // return that index
 		} 
 	}
@@ -37,7 +37,7 @@ int LinearSearch(int arr[], int num){
 int main()
 { 	
 	
-	int arr[5] = {9,2,45,69,33}; // example array
+	vector<int> arr = {9,2,45,69,33}; // example array
 
 	int index = LinearSearch(arr, 45); // testing the function
 
