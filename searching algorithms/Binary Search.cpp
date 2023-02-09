@@ -23,23 +23,25 @@ void printArray(vector<int> &arr){
 
 // Function implementing Binary search (Note: Binary Search only works on sorted array)
 int BinarySearch(vector<int> &arr, int num){
-    int length = arr.size();
-    int left = 0;
-    int right = length-1;
-    int mid;
-    while(left <= right){
-        mid = left + (right - left) /2;
-        if(arr[mid] == num){
-            return mid;
+    int length = arr.size();    // first get the length of the array
+    int left = 0;               // set the left boundary of search space to 0
+    int right = length-1;       // set the right boundary of search space to length-1(as the last index is length-1)
+    int mid;                    // declaring a variable to store the value of mid index
+    while(left <= right){       // repeat the process of searching until the boundary is not emptied or left boundary is les than equal to right boundary
+        mid = left + (right - left) /2;    // calculate the value of the middle index of the boundary
+        if(arr[mid] == num){               // if the element at middle index is equal to target element
+            return mid;                    // return that index
         }
-        else if(arr[mid] > num){
-            right = mid-1;
-        }
-        else if(arr[mid] < num){
-            left = mid+1;
-        }
+        else if(arr[mid] > num){           // if the element is less than the middle index element
+            right = mid-1;                 // move the rightmost boundary to left side i.e. to mid-1 as the elements 
+        }                                  // on the right side are greater than target element and we can avoid searching them
+        
+        else if(arr[mid] < num){           // if the element is greater than the middle index element
+            left = mid+1;                  // move the leftmost boundary to right side i.e. to mid+1 as elements
+        }                                  // on the left side are lesser than target element and we can aviod searching them
     }
-    return -1;
+
+    return -1;  // if element not found and the boundary emptied the element is not present in the array, so we return -1
 }
 
 
