@@ -19,41 +19,45 @@ typedef unsigned long long ull;
 typedef long double lld;
 
 
+
+// getbit function returns whether the bit is 1 at the given position
 bool getbit(int n, int pos){
 	if ((n & (1<<pos)) != 0){return true;}
-	else{return false;}
+	else return false;
 }
 
+// setbit function sets the bit at given position (setting a bit means setting it to 1)
 int setbit(int n, int pos){
-
 	return (n | (1<<pos));
 }
 
+// clearbit function clears the bit at given position (clearing means setting it to 0)
 int clearbit(int n, int pos){
 	int mask=~(1<<pos);
 	return (n & (mask));
 }
 
+// updatebit function updates the value of bit (0 or 1) at given position
 int updatebit(int n, int pos,int val){
 	int mask = ~(1<<pos);
 	n = n & mask;
-
 	return (n | (val<<pos));
 }
 
+// numberofone function returns the number of 1's in the binary representation of the given number
 int numberofone(int n){
 	int ans=0;
-	int temp=0;
 	while(n!=0){
-		if(n & (1<<temp) != 0){ans++;}
-		temp++;
+		if(n & 1 != 0) ans++;
 		n=n>>1;
 	}
 
 	return ans;
 }
 
-void subsets(int arr[], int n){
+
+// subsets function generates all possible subsets of an array using bit manipulation
+void subsets(vector<int> &arr, int n){
 
 	for(int i=0;i<(1<<n);i++){
 		for(int j=0;j<n;j++){
@@ -66,7 +70,8 @@ void subsets(int arr[], int n){
 	}
 }
 
-int unique(int arr[] ,int n){
+// unique function returns the unique element in the array of duplicate elements
+int unique(vector<int> &arr, int n){
 
 	int xorsum=0;
 	for(int i=0;i<n;i++){
@@ -78,6 +83,7 @@ int unique(int arr[] ,int n){
 }
 
 
+// numberofbits function returns the number of total bits used in the formation of the given number
 int numberofbits(int x){
 	int ans=0;
 	while(x!=0){
@@ -89,38 +95,6 @@ int numberofbits(int x){
 
 int main()
 {
-
-int n1=5,n2=2;
-
-	// if(getbit(n1,n2)==true){cout << "TRUE";}
-	// else{cout << "FALSE";}
-
-	// n1=setbit(n1,1);
-	// cout << n1;
-
-	// n1=clearbit(n1,0);
-	// cout << n1;
-
-	// cout << updatebit(n1,1,1);
-
-	// int n = 17;
-	// if((n & (n-1)) != 0){cout << "NOT a power of 2";}
-	// else{cout << "A power of 2";}
-	
-	// cout << numberofone(n);	
-
-	// int arr[5] = {1,2,3,4,5};
-	// subsets(arr , 5);
-	// int a = numberofbits(5);
-	// cout << a;
-
-	if(getbit(5,0) == true){cout << "TURE" << nline;}
-	else{ cout << "FALSE" << nline;}
-	// int arr[]={1,2,3,9,3,2,6,1,6};
-	// cout << unique(arr,9);
-	
-
-	
 
 return 0;
 }
