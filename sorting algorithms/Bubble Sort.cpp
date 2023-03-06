@@ -38,7 +38,7 @@ void bubbleSort(vector<int> &arr){
 	}
 }	
 
-
+// BubbleSort implemented as recursive function
 void bubbleSortRecursive(vector<int> &arr, int n){
 	if(n==1){return;} // if size of array is 1
 

@@ -4,10 +4,15 @@
 using namespace std;
 
 #define MOD 1000000007
+#define MOD1 998244353
 #define INF 1e18
 #define PI 3.141592653589793238462
 #define nline "\n"
 #define space " "
+#define PB push_back
+#define MP make_pair
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+
 
 typedef long long int ll;
 typedef unsigned long long ull;
@@ -47,15 +52,16 @@ int BinarySearch(vector<int> &arr, int num){
 
 int BinarySearchRecursive(vector<int> &arr, int num, int left, int right){
     
-    if(left > right) return -1;
-    int mid = left + (right - left)/2;
-    if(arr[mid] == num){
-        return mid;
+    if(left > right) return -1; // if the boundary is emptied or leftmost boundary became more than rightmost boundary return -1 as element doesn't exist in the given boundary
+    int mid = left + (right - left)/2; // get the value of middle index of the current search space
+    if(arr[mid] == num){ // if the element at middle index is equal to the target element
+        return mid;      // return that index
     }
-    else if(arr[mid] > num){
-        return BinarySearchRecursive(arr, num, n, left, mid-1);
+    else if(arr[mid] > num){ // if the element at middle index is greater than the target element that means we have to search in between leftmost boundary and mid-1
+        return BinarySearchRecursive(arr, num, n, left, mid-1); // so reduce the size of rightmost boundary to mid-1 and return the function call
     }    
-    return BinarySearchRecursive(arr, num, n, mid+1, right);
+    return BinarySearchRecursive(arr, num, n, mid+1, right); // if the element at middle index is smaller than the target element that means we have to search in between 
+        // rightmost boundary and mid+1, so change the leftmost boundary to mid+1 and return the function call
     
 }
 

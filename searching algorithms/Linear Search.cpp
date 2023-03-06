@@ -4,10 +4,15 @@
 using namespace std;
 
 #define MOD 1000000007
+#define MOD1 998244353
 #define INF 1e18
 #define PI 3.141592653589793238462
 #define nline "\n"
 #define space " "
+#define PB push_back
+#define MP make_pair
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+
 
 typedef long long int ll;
 typedef unsigned long long ull;
