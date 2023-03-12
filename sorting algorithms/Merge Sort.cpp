@@ -19,6 +19,13 @@ typedef long long int ll;
 typedef unsigned long long ull;
 typedef long double lld;
 
+// Function to print the array
+void printArray(vector<int> &arr){
+	for(int i: arr){
+		cout << i << space;
+	}
+	cout << nline;
+}
 
 void merge(vector<int> &arr, int start, int mid, int end){
 	vector<int> ans(end-start+1);
@@ -66,13 +73,9 @@ int main()
 { 	
 
 	vector<int> arr = {6,3,9,5,2,8};
-
+	printArray();
 	merge_sort(arr, 0, arr.size()-1);
-	
-	for(int i: arr){
-		cout << i << " ";
-	}
-
+	printArray();
 
 return 0;
 }
