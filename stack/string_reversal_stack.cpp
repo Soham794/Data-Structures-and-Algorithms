@@ -9,7 +9,7 @@ typedef long long int ll;
 typedef unsigned long long ull;
 
 struct Node{
-	int data;
+	char data;
 	Node* next;
 };
 
@@ -20,11 +20,12 @@ bool isEmpty(){
 	return false;
 }
 
-void push(int val){
+void push(char val){
 
 	Node* newnode = new Node;
 	newnode->data = val;
 	newnode->next = top;
+	
 
 	top = newnode;
 
@@ -62,16 +63,30 @@ void peek(){
 
 }
 
-int Top(){
-	return top->data;
+char Top(){
+	if( top == NULL){return -1;}
+	else{return top->data;}
 }
-
-
 
 int main()
 {
 
+	// // reverse a string using stack
 
+	string s;
+	cin >> s;
+
+	for(int i=0;i<s.size();i++){
+		push(s[i]);
+	}
+
+	for(int i=0;i<s.size();i++){
+		s[i] = Top();
+		pop();
+	}
+
+	cout << s;
+	
 
 return 0;
 }
